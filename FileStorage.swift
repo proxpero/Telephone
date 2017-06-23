@@ -9,13 +9,13 @@ public struct FileStorage {
 
     /// Initialize with a baseURL, which has a default value of the document 
     /// directory in the user domain mask.
-    init(baseURL: URL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)) {
+    public init(baseURL: URL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)) {
         self.baseURL = baseURL
     }
 
     /// A subscript for reading and writing data at the address represented
     /// by `key`. Setting a value of `nil` clears the cache for that `key`.
-    subscript(key: String) -> Data? {
+    public subscript(key: String) -> Data? {
         get {
             let url = baseURL.appendingPathComponent(key)
             return try? Data(contentsOf: url)
@@ -31,7 +31,7 @@ public struct FileStorage {
         }
     }
 
-    func clear() {
+    public func clear() {
         guard let urls = try? FileManager.default.contentsOfDirectory(at: baseURL, includingPropertiesForKeys: [], options: FileManager.DirectoryEnumerationOptions(rawValue: 0)) else { return }
         urls.forEach { url in
             _ = try? FileManager.default.removeItem(at: url)
