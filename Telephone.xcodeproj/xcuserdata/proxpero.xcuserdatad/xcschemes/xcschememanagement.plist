@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Telephone-iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>Telephone-macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Telephone-tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>52927EEA1EFC31670019B891</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52927EF81EFC31850019B891</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52927F051EFC31980019B891</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52927F131EFC32480019B891</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52927F221EFC32580019B891</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52927F311EFC32840019B891</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
