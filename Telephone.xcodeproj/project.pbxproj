@@ -64,6 +64,9 @@
 		52927FA51EFC72C30019B891 /* TestItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 52927FA41EFC72C30019B891 /* TestItem.json */; };
 		52927FA61EFC72C30019B891 /* TestItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 52927FA41EFC72C30019B891 /* TestItem.json */; };
 		52927FA71EFC72C30019B891 /* TestItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 52927FA41EFC72C30019B891 /* TestItem.json */; };
+		52B8E8D41EFD795800821D42 /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8E8D31EFD795800821D42 /* URLProvider.swift */; };
+		52B8E8D51EFD795800821D42 /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8E8D31EFD795800821D42 /* URLProvider.swift */; };
+		52B8E8D61EFD795800821D42 /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8E8D31EFD795800821D42 /* URLProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +119,7 @@
 		52927F801EFC36090019B891 /* md5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = md5Tests.swift; sourceTree = "<group>"; };
 		52927FA01EFC53CE0019B891 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		52927FA41EFC72C30019B891 /* TestItem.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestItem.json; sourceTree = "<group>"; };
+		52B8E8D31EFD795800821D42 /* URLProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 				52927F741EFC35DF0019B891 /* CacheTests.swift */,
 				52927F651EFC34440019B891 /* CachedWebservice.swift */,
 				52927F781EFC35EC0019B891 /* CachedWebserviceTests.swift */,
+				52B8E8D31EFD795800821D42 /* URLProvider.swift */,
 				52927F611EFC34440019B891 /* FileStorage.swift */,
 				52927F7C1EFC35F80019B891 /* FileStorageTests.swift */,
 				52927F641EFC34440019B891 /* md5.swift */,
@@ -456,6 +461,7 @@
 			files = (
 				52927F961EFC37E90019B891 /* Resource.swift in Sources */,
 				52927F981EFC37E90019B891 /* Cache.swift in Sources */,
+				52B8E8D41EFD795800821D42 /* URLProvider.swift in Sources */,
 				52927F871EFC37DE0019B891 /* Webservice.swift in Sources */,
 				52927F9B1EFC37E90019B891 /* JSONDecodable.swift in Sources */,
 				52927FA11EFC53CE0019B891 /* HttpMethod.swift in Sources */,
@@ -472,6 +478,7 @@
 			files = (
 				52927F901EFC37E80019B891 /* Resource.swift in Sources */,
 				52927F921EFC37E80019B891 /* Cache.swift in Sources */,
+				52B8E8D51EFD795800821D42 /* URLProvider.swift in Sources */,
 				52927F881EFC37DE0019B891 /* Webservice.swift in Sources */,
 				52927F951EFC37E80019B891 /* JSONDecodable.swift in Sources */,
 				52927FA21EFC53CE0019B891 /* HttpMethod.swift in Sources */,
@@ -488,6 +495,7 @@
 			files = (
 				52927F8A1EFC37E80019B891 /* Resource.swift in Sources */,
 				52927F8C1EFC37E80019B891 /* Cache.swift in Sources */,
+				52B8E8D61EFD795800821D42 /* URLProvider.swift in Sources */,
 				52927F891EFC37DE0019B891 /* Webservice.swift in Sources */,
 				52927F8F1EFC37E80019B891 /* JSONDecodable.swift in Sources */,
 				52927FA31EFC53CE0019B891 /* HttpMethod.swift in Sources */,
