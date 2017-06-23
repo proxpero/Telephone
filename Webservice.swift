@@ -5,10 +5,10 @@ extension URLRequest {
     /// Initialize a URLRequest with a `Resource`.
     fileprivate init<A>(resource: Resource<A>) {
         self.init(url: resource.url)
-//        self.httpMethod = resource.method.method
-//        if case .post(let data) = resource.method {
-//            httpBody = data
-//        }
+        self.httpMethod = resource.method.type
+        if case .post(let data) = resource.method {
+            httpBody = data
+        }
     }
 }
 

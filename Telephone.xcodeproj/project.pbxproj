@@ -58,6 +58,12 @@
 		52927F991EFC37E90019B891 /* CachedWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52927F651EFC34440019B891 /* CachedWebservice.swift */; };
 		52927F9A1EFC37E90019B891 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52927F611EFC34440019B891 /* FileStorage.swift */; };
 		52927F9B1EFC37E90019B891 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52927F631EFC34440019B891 /* JSONDecodable.swift */; };
+		52927FA11EFC53CE0019B891 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52927FA01EFC53CE0019B891 /* HttpMethod.swift */; };
+		52927FA21EFC53CE0019B891 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52927FA01EFC53CE0019B891 /* HttpMethod.swift */; };
+		52927FA31EFC53CE0019B891 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52927FA01EFC53CE0019B891 /* HttpMethod.swift */; };
+		52927FA51EFC72C30019B891 /* TestItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 52927FA41EFC72C30019B891 /* TestItem.json */; };
+		52927FA61EFC72C30019B891 /* TestItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 52927FA41EFC72C30019B891 /* TestItem.json */; };
+		52927FA71EFC72C30019B891 /* TestItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 52927FA41EFC72C30019B891 /* TestItem.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +114,8 @@
 		52927F781EFC35EC0019B891 /* CachedWebserviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedWebserviceTests.swift; sourceTree = "<group>"; };
 		52927F7C1EFC35F80019B891 /* FileStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageTests.swift; sourceTree = "<group>"; };
 		52927F801EFC36090019B891 /* md5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = md5Tests.swift; sourceTree = "<group>"; };
+		52927FA01EFC53CE0019B891 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		52927FA41EFC72C30019B891 /* TestItem.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestItem.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +172,7 @@
 			children = (
 				52927F671EFC34440019B891 /* Webservice.swift */,
 				52927F681EFC35AA0019B891 /* WebserviceTests.swift */,
+				52927FA01EFC53CE0019B891 /* HttpMethod.swift */,
 				52927F661EFC34440019B891 /* Resource.swift */,
 				52927F6C1EFC35BF0019B891 /* ResourceTests.swift */,
 				52927F621EFC34440019B891 /* Result.swift */,
@@ -177,6 +186,7 @@
 				52927F641EFC34440019B891 /* md5.swift */,
 				52927F801EFC36090019B891 /* md5Tests.swift */,
 				52927F631EFC34440019B891 /* JSONDecodable.swift */,
+				52927FA41EFC72C30019B891 /* TestItem.json */,
 				52927F0F1EFC31E90019B891 /* Info.plist */,
 				52927F0E1EFC31E90019B891 /* Telephone.h */,
 				52927EEC1EFC31670019B891 /* Products */,
@@ -417,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52927FA51EFC72C30019B891 /* TestItem.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52927FA61EFC72C30019B891 /* TestItem.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52927FA71EFC72C30019B891 /* TestItem.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +458,7 @@
 				52927F981EFC37E90019B891 /* Cache.swift in Sources */,
 				52927F871EFC37DE0019B891 /* Webservice.swift in Sources */,
 				52927F9B1EFC37E90019B891 /* JSONDecodable.swift in Sources */,
+				52927FA11EFC53CE0019B891 /* HttpMethod.swift in Sources */,
 				52927F971EFC37E90019B891 /* Result.swift in Sources */,
 				52927F991EFC37E90019B891 /* CachedWebservice.swift in Sources */,
 				52927F9A1EFC37E90019B891 /* FileStorage.swift in Sources */,
@@ -460,6 +474,7 @@
 				52927F921EFC37E80019B891 /* Cache.swift in Sources */,
 				52927F881EFC37DE0019B891 /* Webservice.swift in Sources */,
 				52927F951EFC37E80019B891 /* JSONDecodable.swift in Sources */,
+				52927FA21EFC53CE0019B891 /* HttpMethod.swift in Sources */,
 				52927F911EFC37E80019B891 /* Result.swift in Sources */,
 				52927F931EFC37E80019B891 /* CachedWebservice.swift in Sources */,
 				52927F941EFC37E80019B891 /* FileStorage.swift in Sources */,
@@ -475,6 +490,7 @@
 				52927F8C1EFC37E80019B891 /* Cache.swift in Sources */,
 				52927F891EFC37DE0019B891 /* Webservice.swift in Sources */,
 				52927F8F1EFC37E80019B891 /* JSONDecodable.swift in Sources */,
+				52927FA31EFC53CE0019B891 /* HttpMethod.swift in Sources */,
 				52927F8B1EFC37E80019B891 /* Result.swift in Sources */,
 				52927F8D1EFC37E80019B891 /* CachedWebservice.swift in Sources */,
 				52927F8E1EFC37E80019B891 /* FileStorage.swift in Sources */,

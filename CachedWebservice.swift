@@ -26,7 +26,7 @@ public final class CachedWebservice {
             return
         }
 
-        let dataResource = Resource<Data>(url: resource.url, parse: { $0 })
+        let dataResource = Resource<Data>(url: resource.url, method: resource.method, parse: { $0 })
 
         webservice.load(dataResource) { result in
             switch result {

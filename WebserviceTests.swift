@@ -27,27 +27,37 @@ class WebserviceTests: XCTestCase {
         }
     }
 
-    struct Item {
+    struct Item: Codable, Equatable {
+        static func ==(lhs: Item, rhs: Item) -> Bool {
+            return lhs.id == rhs.id && lhs.name == rhs.name
+        }
+        let id: Int
+        let name: String
+    }
+
+    let expectation = Item(id: 42, name: "accusamus beatae ad facilis cum similique qui sunt")
+
+    struct Foo: Codable {
         let name: String?
         init(data: Data) {
             self.name = String.init(data: data, encoding: .utf8)
         }
     }
 
-    func testLoad() {
+    func testLoadFromMemeory() {
         let data = "data".data(using: .utf8)!
         let engine = NetworkEngineMock(data: data)
         let ws = Webservice(engine: engine)
         let url = URL(string: "example.com/items/1")!
-        let resource = Resource(url: url) { data in
-            return Item(data: data)
+        let resource = Resource(url: url, method: .get) { data in
+            return Foo(data: data)
         }
         let loaded = expectation(description: "loaded")
         ws.load(resource) { result in
             switch result {
-            case .success(let item):
-                XCTAssertNotNil(item.name)
-                XCTAssertEqual(item.name, "data")
+            case .success(let foo):
+                XCTAssertNotNil(foo.name)
+                XCTAssertEqual(foo.name, "data")
             case .error(let error):
                 XCTFail("error: \(error)")
             }
@@ -56,4 +66,24 @@ class WebserviceTests: XCTestCase {
         wait(for: [loaded], timeout: 1)
     }
 
+    func testLoadFromDisk() {
+
+        guard let url = Bundle(for: WebserviceTests.self).url(forResource: "TestItem", withExtension: "json") else {
+            XCTFail("Could not generate URL.")
+            fatalError()
+        }
+        let data = try! Data(contentsOf: url)
+        let engine = NetworkEngineMock(data: data)
+        let resource = Resource<Item>(url: url)
+        print(resource)
+        let ws = Webservice(engine: engine)
+        ws.load(resource) { result in
+            switch result {
+            case .success(let item):
+                XCTAssertEqual(item, self.expectation)
+            case .error(let error):
+                XCTFail("\(error)")
+            }
+        }
+    }
 }
