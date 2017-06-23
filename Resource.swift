@@ -16,14 +16,12 @@ public struct Resource<A> {
     /// A function to convert the received data to an `A`.
     public let parse: (Data) -> A?
 
-}
-
-extension Resource {
-    public init(url: URL, method: HttpMethod<Data> = .get, parse: @escaping (Data) -> A) {
+    public init(url: URL, method: HttpMethod<Data> = .get, parse: @escaping (Data) -> A?) {
         self.url = url
         self.method = method
         self.parse = parse
     }
+
 }
 
 extension Resource where A: Decodable {
