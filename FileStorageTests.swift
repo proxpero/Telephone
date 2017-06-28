@@ -7,8 +7,4 @@
 
 import XCTest
 
-class FileStorageTests: XCTestCase {
-
-
-
-}
+class FileStorageTests: XCTestCase {}

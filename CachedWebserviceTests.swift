@@ -7,8 +7,4 @@
 
 import XCTest
 
-class CachedWebserviceTests: XCTestCase {
-
-
-
-}
+class CachedWebserviceTests: XCTestCase {}

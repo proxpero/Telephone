@@ -1,20 +1,13 @@
-//
-//  ResourceTests.swift
-//  Telephone
-//
-//  Created by Todd Olsen on 6/22/17.
-//
-
 import XCTest
 @testable import Telephone
 
 class ResourceTests: XCTestCase {
 
     struct Item: Codable, Equatable {
-        static func ==(lhs: Item, rhs: Item) -> Bool {
+        static func == (lhs: Item, rhs: Item) -> Bool {
             return lhs.id == rhs.id && lhs.name == rhs.name
         }
-        let id: Int
+        let id: Int // swiftlint:disable:this identifier_name
         let name: String
     }
 
@@ -30,8 +23,7 @@ class ResourceTests: XCTestCase {
         let data = try? Data.init(contentsOf: resource.url)
         let item = data.flatMap(resource.parse)
         XCTAssertNotNil(item)
-        XCTAssertEqual(item!, expectation)  
+        XCTAssertEqual(item!, expectation)
     }
-
 
 }

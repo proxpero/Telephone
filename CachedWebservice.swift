@@ -1,4 +1,3 @@
-
 import Foundation
 
 /// A class to manage the interaction between a `Webservice` and a `Cache`.
@@ -19,8 +18,7 @@ public final class CachedWebservice {
     /// Load a resource, if the response has been cached, call it with the 
     /// completion handler. Otherwise, load the response from the network,
     /// cache it, then call it with the completion handler.
-    public func load<A>(_ resource: Resource<A>, completion: @escaping (Result<A>) -> ()) {
-
+    public func load<A>(_ resource: Resource<A>, completion: @escaping (Result<A>) -> Void) {
         if let result = cache.load(resource) {
             completion(.success(result))
             return

@@ -1,4 +1,3 @@
-
 import Foundation
 
 /// A type to encapsulate URL information.

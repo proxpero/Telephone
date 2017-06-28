@@ -1,4 +1,3 @@
-
 /// A type to represent either a success with an associated value of `A`,
 /// or a failure, with an associated type of `Error`.
 public enum Result<A> {

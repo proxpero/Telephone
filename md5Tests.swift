@@ -8,7 +8,7 @@
 import XCTest
 @testable import Telephone
 
-class md5Tests: XCTestCase {
+class MD5Tests: XCTestCase {
 
     // RFC 1321 test suite
     let tests = [
@@ -18,7 +18,7 @@ class md5Tests: XCTestCase {
         ("message digest", "f96b697d7cb7938d525a2f31aaf161d0"),
         ("abcdefghijklmnopqrstuvwxyz", "c3fcd3d76192e4007dfb496cca67e13b"),
         ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "d174ab98d277d9f5a5611c2c9f419d9f"),
-        ("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "57edf4a22be3c955ac49da2e2107b67a")
+        ("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "57edf4a22be3c955ac49da2e2107b67a") // swiftlint:disable:this line_length
     ]
 
     func testMD5() {

@@ -1,4 +1,3 @@
-
 import Foundation
 
 /// A class to manage the caching of `Resource`s.

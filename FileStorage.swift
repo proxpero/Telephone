@@ -1,4 +1,3 @@
-
 import Foundation
 
 /// A class to manage storing and retrieving data from disk.
@@ -9,7 +8,8 @@ public struct FileStorage {
 
     /// Initialize with a baseURL, which has a default value of the document 
     /// directory in the user domain mask.
-    public init(baseURL: URL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)) {
+    public init(baseURL: URL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)) { // swiftlint:disable:this line_length
+        // swiftlint:disable:previous force_try
         self.baseURL = baseURL
     }
 
@@ -32,7 +32,11 @@ public struct FileStorage {
     }
 
     public func clear() {
-        guard let urls = try? FileManager.default.contentsOfDirectory(at: baseURL, includingPropertiesForKeys: [], options: FileManager.DirectoryEnumerationOptions(rawValue: 0)) else { return }
+        guard let urls = try? FileManager.default.contentsOfDirectory(
+            at: baseURL,
+            includingPropertiesForKeys: [],
+            options: FileManager.DirectoryEnumerationOptions(rawValue: 0)
+            ) else { return }
         urls.forEach { url in
             _ = try? FileManager.default.removeItem(at: url)
         }

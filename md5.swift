@@ -1,5 +1,4 @@
-
-// This is an implementation of md5 that I had previously written. It has been tested elsewhere.
+// An implementation of md5.
 extension Collection where Iterator.Element == UInt8 {
 
     /// Returns the md5 hash of self.
@@ -24,11 +23,11 @@ extension Collection where Iterator.Element == UInt8 {
         // s specifies the per-round shift amounts
         let s: [Word] = [
             7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22,
-            5,  9, 14, 20, 5,  9, 14, 20, 5,  9, 14, 20, 5,  9, 14, 20,
+            5, 09, 14, 20, 5, 09, 14, 20, 5, 09, 14, 20, 5, 09, 14, 20,
             4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23,
             6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21
         ]
-        
+
         // K[i] = abs(sin(i + 1)) * 232 (radians)
         let k: [Word] = [
             0xd76aa478, 0xe8c7b756, 0x242070db, 0xc1bdceee,
@@ -94,8 +93,8 @@ extension Collection where Iterator.Element == UInt8 {
             func part(_ index: Int, _ offset: Int, _ shift: Word) -> Word {
                 return Word(chunk[4 * index + offset]) << shift
             }
-            var m = (0...15).map { i in
-                part(i, 0, 0) | part(i, 1, 8) | part(i, 2, 16) | part(i, 3, 24)
+            var m = (0...15).map { idx in
+                part(idx, 0, 0) | part(idx, 1, 8) | part(idx, 2, 16) | part(idx, 3, 24)
             }
 
             // Initialize hash value for this chunk:
@@ -114,33 +113,28 @@ extension Collection where Iterator.Element == UInt8 {
                 case 0...15:
                     f = (B & C) | ((~B) & D)
                     g = index
-
                 case 16...31:
                     f = (B & D) | (C & (~D))
                     g = ((5*index + 1) % 16)
-
                 case 32...47:
                     f = B ^ C ^ D
                     g = ((3*index + 5) % 16)
-                    
                 case 48...63:
                     f = C ^ (B | (~D))
                     g = ((7*index) % 16)
-                    
                 default:
                     break
                 }
-                
-                func rotateLeft(_ x: Word, by amount: Word) -> Word{
-                    return ((x << amount) & 0xFFFFFFFF) | (x >> (32 - amount))
+
+                func rotateLeft(_ word: Word, by amount: Word) -> Word {
+                    return ((word << amount) & 0xFFFFFFFF) | (word >> (32 - amount))
                 }
-                
+
                 let dTemp = D
                 D = C
                 C = B
                 B = B &+ rotateLeft(A &+ f &+ k[index] &+ m[g], by: s[index])
                 A = dTemp
-                
             }
 
             // Add this chunk's hash to result so far:
@@ -148,14 +142,13 @@ extension Collection where Iterator.Element == UInt8 {
             b = b &+ B
             c = c &+ C
             d = d &+ D
-            
         }
 
         // a append b append c append d
         let result = [a, b, c, d].flatMap { word in
             [Word]([00, 08, 16, 24]).map { Byte((word >> $0) & 0xFF) }
         }
-        
+
         return result
     }
 }
@@ -166,4 +159,3 @@ extension String {
         return self.utf8.md5
     }
 }
-

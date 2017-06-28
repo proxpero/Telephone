@@ -1,4 +1,3 @@
-
 import Foundation
 
 /// A representation of a resource on the internet, encapsulating the location
@@ -31,6 +30,7 @@ extension Resource where A: Decodable {
             // If `json` cannot be transformed into `Data` then it is a programmer
             // error and the app will crash. Check that the json was formed correctly.
             let result = try! JSONSerialization.data(withJSONObject: json, options: [])
+            // swiftlint:disable:previous force_try
             return result
         }
         let decoder = JSONDecoder()

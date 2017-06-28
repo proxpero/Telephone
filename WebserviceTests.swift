@@ -28,10 +28,10 @@ class WebserviceTests: XCTestCase {
     }
 
     struct Item: Codable, Equatable {
-        static func ==(lhs: Item, rhs: Item) -> Bool {
+        static func == (lhs: Item, rhs: Item) -> Bool {
             return lhs.id == rhs.id && lhs.name == rhs.name
         }
-        let id: Int
+        let id: Int // swiftlint:disable:this identifier_name
         let name: String
     }
 
@@ -72,7 +72,7 @@ class WebserviceTests: XCTestCase {
             XCTFail("Could not generate URL.")
             fatalError()
         }
-        let data = try! Data(contentsOf: url)
+        let data = try! Data(contentsOf: url) // swiftlint:disable:this force_try
         let engine = NetworkEngineMock(data: data)
         let resource = Resource<Item>(url: url)
         print(resource)

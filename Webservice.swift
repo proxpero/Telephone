@@ -1,4 +1,3 @@
-
 import Foundation
 
 extension URLRequest {
@@ -18,7 +17,7 @@ extension String: Error {}
 /// A protocol intended to abstract `URLSession.shared` so that the
 /// singleton can be mocked during tests.
 public protocol NetworkEngine {
-    typealias Handler = (Data?, URLResponse?, Error?) -> ()
+    typealias Handler = (Data?, URLResponse?, Error?) -> Void
     /// A function to request a `Resource` of `A` from the network.
     func request<A>(resource: Resource<A>, handler: @escaping Handler)
 }
@@ -58,9 +57,10 @@ public final class Webservice {
     /// on the main queue.
     ///
     /// - Parameter resource: A `Resource` of `A`
-    /// - Parameter completion: A completion handler of type `Result<A> -> ()` which is called when the network call returns a response.
-    public func load<A>(_ resource: Resource<A>, completion: @escaping (Result<A>) -> ()) {
-        engine.request(resource: resource) { (data, response, _) in
+    /// - Parameter completion: A completion handler of type `Result<A> -> Void`
+    /// which is called when the network call returns a response.
+    public func load<A>(_ resource: Resource<A>, completion: @escaping (Result<A>) -> Void) {
+        engine.request(resource: resource) { (data, _, _) in
             let result: Result<A>
             let parsed = data.flatMap(resource.parse)
             result = Result(parsed, or: "Webservice Error")

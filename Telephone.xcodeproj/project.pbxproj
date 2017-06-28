@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52499C271F0097A0006A243C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52499C261F0097A0006A243C /* Error.swift */; };
+		52499C281F0097A0006A243C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52499C261F0097A0006A243C /* Error.swift */; };
+		52499C291F0097A0006A243C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52499C261F0097A0006A243C /* Error.swift */; };
 		52927F191EFC32480019B891 /* Telephone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52927EEB1EFC31670019B891 /* Telephone.framework */; };
 		52927F281EFC32580019B891 /* Telephone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52927EF91EFC31850019B891 /* Telephone.framework */; };
 		52927F371EFC32840019B891 /* Telephone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52927F061EFC31980019B891 /* Telephone.framework */; };
@@ -94,6 +97,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52499C261F0097A0006A243C /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		52927EEB1EFC31670019B891 /* Telephone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Telephone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52927EF91EFC31850019B891 /* Telephone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Telephone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52927F061EFC31980019B891 /* Telephone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Telephone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +195,7 @@
 				52927F641EFC34440019B891 /* md5.swift */,
 				52927F801EFC36090019B891 /* md5Tests.swift */,
 				52927F631EFC34440019B891 /* JSONDecodable.swift */,
+				52499C261F0097A0006A243C /* Error.swift */,
 				52927FA41EFC72C30019B891 /* TestItem.json */,
 				52927F0F1EFC31E90019B891 /* Info.plist */,
 				52927F0E1EFC31E90019B891 /* Telephone.h */,
@@ -249,6 +254,7 @@
 				52927EE71EFC31670019B891 /* Frameworks */,
 				52927EE81EFC31670019B891 /* Headers */,
 				52927EE91EFC31670019B891 /* Resources */,
+				52499C2C1F02E834006A243C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -267,6 +273,7 @@
 				52927EF51EFC31850019B891 /* Frameworks */,
 				52927EF61EFC31850019B891 /* Headers */,
 				52927EF71EFC31850019B891 /* Resources */,
+				52499C2D1F02E843006A243C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -285,6 +292,7 @@
 				52927F021EFC31980019B891 /* Frameworks */,
 				52927F031EFC31980019B891 /* Headers */,
 				52927F041EFC31980019B891 /* Resources */,
+				52499C2E1F02E84C006A243C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -454,6 +462,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		52499C2C1F02E834006A243C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		52499C2D1F02E843006A243C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		52499C2E1F02E84C006A243C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52927EE61EFC31670019B891 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -462,6 +512,7 @@
 				52927F961EFC37E90019B891 /* Resource.swift in Sources */,
 				52927F981EFC37E90019B891 /* Cache.swift in Sources */,
 				52B8E8D41EFD795800821D42 /* URLProvider.swift in Sources */,
+				52499C271F0097A0006A243C /* Error.swift in Sources */,
 				52927F871EFC37DE0019B891 /* Webservice.swift in Sources */,
 				52927F9B1EFC37E90019B891 /* JSONDecodable.swift in Sources */,
 				52927FA11EFC53CE0019B891 /* HttpMethod.swift in Sources */,
@@ -479,6 +530,7 @@
 				52927F901EFC37E80019B891 /* Resource.swift in Sources */,
 				52927F921EFC37E80019B891 /* Cache.swift in Sources */,
 				52B8E8D51EFD795800821D42 /* URLProvider.swift in Sources */,
+				52499C281F0097A0006A243C /* Error.swift in Sources */,
 				52927F881EFC37DE0019B891 /* Webservice.swift in Sources */,
 				52927F951EFC37E80019B891 /* JSONDecodable.swift in Sources */,
 				52927FA21EFC53CE0019B891 /* HttpMethod.swift in Sources */,
@@ -496,6 +548,7 @@
 				52927F8A1EFC37E80019B891 /* Resource.swift in Sources */,
 				52927F8C1EFC37E80019B891 /* Cache.swift in Sources */,
 				52B8E8D61EFD795800821D42 /* URLProvider.swift in Sources */,
+				52499C291F0097A0006A243C /* Error.swift in Sources */,
 				52927F891EFC37DE0019B891 /* Webservice.swift in Sources */,
 				52927F8F1EFC37E80019B891 /* JSONDecodable.swift in Sources */,
 				52927FA31EFC53CE0019B891 /* HttpMethod.swift in Sources */,

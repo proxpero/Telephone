@@ -1,4 +1,3 @@
-
 /// A JSON dictionary.
 public typealias JSONDictionary = [String: AnyObject]
 
@@ -7,4 +6,3 @@ protocol JSONDecodable {
     /// Initialize `Self` with a JSON dictionary.
     init?(json: JSONDictionary)
 }
-

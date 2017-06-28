@@ -7,8 +7,4 @@
 
 import XCTest
 
-class ResultTests: XCTestCase {
-
-
-
-}
+class ResultTests: XCTestCase {}
