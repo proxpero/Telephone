@@ -1,5 +1,5 @@
 public enum TelephoneError: Error {
     case webservice(String)
-    case cashe(String)
+    case cache(String)
     case fileStorage(String)
 }

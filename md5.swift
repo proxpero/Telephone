@@ -5,7 +5,7 @@ extension Collection where Iterator.Element == UInt8 {
     public var md5: String {
         return self.md5Digest.lazy.reduce("") {
             var s = String($1, radix: 16)
-            if s.characters.count == 1 {
+            if s.count == 1 {
                 s = "0" + s
             }
             return $0 + s

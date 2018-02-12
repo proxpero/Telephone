@@ -1,6 +1,6 @@
 //
 //  HttpMethod.swift
-//  Placeholder
+//  Telephone
 //
 //  Created by Todd Olsen on 4/6/17.
 //  Copyright © 2017 proxpero. All rights reserved.
@@ -12,7 +12,7 @@ public enum HttpMethod<Body> {
 }
 
 extension HttpMethod {
-    public var type: String {
+    public var string: String {
         switch self {
         case .get: return "GET"
         case .post: return "POST"
@@ -22,8 +22,8 @@ extension HttpMethod {
 
 extension HttpMethod {
 
-    /// If the method is a `post` then tranform the body of the post into an `A`
-    /// If the method is a `get` then do nothing.
+    /// If the verb is a `post` then tranform the body of the post into an `A`
+    /// If the verb is a `get` then do nothing.
     public func map<A>(transform: (Body) -> A) -> HttpMethod<A> {
         switch self {
         case .get: return .get

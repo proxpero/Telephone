@@ -1,10 +1,3 @@
-//
-//  WebserviceTests.swift
-//  Telephone
-//
-//  Created by Todd Olsen on 6/22/17.
-//
-
 import XCTest
 @testable import Telephone
 
@@ -49,7 +42,7 @@ class WebserviceTests: XCTestCase {
         let engine = NetworkEngineMock(data: data)
         let ws = Webservice(engine: engine)
         let url = URL(string: "example.com/items/1")!
-        let resource = Resource(url: url, method: .get) { data in
+        let resource = Resource(url: url, verb: .get) { data in
             return Foo(data: data)
         }
         let loaded = expectation(description: "loaded")

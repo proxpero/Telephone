@@ -3,9 +3,9 @@ import Foundation
 /// A class to manage the interaction between a `Webservice` and a `Cache`.
 public final class CachedWebservice {
 
-    /// Shared instance (singleton) of a CachedWebservice (which uses `Webservice.shared`).
-    public static let shared = CachedWebservice(Webservice.shared)
-
+//    /// Shared instance (singleton) of a CachedWebservice (which uses `Webservice.shared`).
+//    public static let shared = CachedWebservice(Webservice.shared)
+//
     private let webservice: Webservice
     private let cache: Cache
 
@@ -24,13 +24,13 @@ public final class CachedWebservice {
             return
         }
 
-        let dataResource = Resource<Data>(url: resource.url, method: resource.method, parse: { $0 })
+        let dataResource = Resource<Data>(url: resource.url, verb: resource.verb, parse: { $0 })
 
         webservice.load(dataResource) { result in
             switch result {
             case .success(let data):
                 self.cache.save(data, for: resource)
-                completion(Result(resource.parse(data), or: "Caching Error"))
+                completion(Result(resource.parse(data), or: TelephoneError.cache("Error")))
             case .error(let error):
                 completion(.error(error))
             }

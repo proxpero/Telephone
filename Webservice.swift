@@ -4,15 +4,15 @@ extension URLRequest {
     /// Initialize a URLRequest with a `Resource`.
     fileprivate init<A>(resource: Resource<A>) {
         self.init(url: resource.url)
-        self.httpMethod = resource.method.type
-        if case .post(let data) = resource.method {
+        self.httpMethod = resource.verb.string
+        if case .post(let data) = resource.verb {
             httpBody = data
         }
     }
 }
 
 /// An `Error` type to describe bad states of a `Webservice`.
-extension String: Error {}
+//extension String: Error {}
 
 /// A protocol intended to abstract `URLSession.shared` so that the
 /// singleton can be mocked during tests.
@@ -63,7 +63,7 @@ public final class Webservice {
         engine.request(resource: resource) { (data, _, _) in
             let result: Result<A>
             let parsed = data.flatMap(resource.parse)
-            result = Result(parsed, or: "Webservice Error")
+            result = Result(parsed, or: TelephoneError.webservice("Error"))
             completion(result)
         }
     }
